@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Initial Happy Birthday Message */
+    .birthday-message {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #ff4081;
+      text-align: center;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+
+    /* Fox and Letter Container */
+    .fox-container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .fox {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .letter {
+      width: 120px;
+      height: 80px;
+      background: #fff;
+      border: 2px solid #ff4081;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .letter:hover {
+      transform: scale(1.05);
+    }
+
+    /* Hidden Message */
+    .message-box {
+      display: none;
+      max-width: 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    /* Mobile Optimizations */
+    @media (max-width: 600px) {
+      .birthday-message { font-size: 2rem; }
+      .fox { width: 140px; }
+      .letter { width: 100px; height: 70px; }
+      .message-box { font-size: 0.9rem; padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- First Screen -->
+  <div class="birthday-message" id="intro">
+    🎉 Happy Birthday 🎂
+  </div>
+
+  <!-- Fox and Letter -->
+  <div class="fox-container" id="foxScene">
+    <img src="./ChatGPT_Image_Sep_30__2025__04_19_07_PM-removebg-preview.png" alt="Cute Fox" class="fox">
+    <div class="letter" id="letter">
+      💌
+    </div>
+    <div class="message-box" id="messageBox">
+      My Love, 💖<br><br>
+      Wishing you the happiest birthday ever! 🎂✨<br>
+      You bring light, joy, and love into my life every day. 🥰<br><br>
+      May all your dreams come true today and always! 💝<br><br>
+      With endless love, 💕
+      Sada Meri rho🧿💗
+    </div>
+  </div>
+
+  <script>
+    // After 3 seconds show fox scene
+    setTimeout(() => {
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("foxScene").style.display = "flex";
+    }, 3000);
+
+    // Letter click opens message
+    document.getElementById("letter").addEventListener("click", () => {
+      document.getElementById("messageBox").style.display = "block";
+    });
+  </script>
+</body>
+</html>  
